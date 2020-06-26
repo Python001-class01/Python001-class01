@@ -59,7 +59,7 @@ def get_page_brief(url,header):
 # 保存movie信息
 def save_movies(movies):
     print(movies)
-    top10 = pd.DataFrame(data=movies,columns=['电影名称','电影类型','上映时间'])
+    top10 = pd.DataFrame(data=movies,cl)
     top10.to_csv('./week01/homework01/top10.csv',encoding='utf-8',index=False,header=False)
     print('finish')
 
