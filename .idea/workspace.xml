@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cfe265d-b239-49cb-8cf7-3c20d1af9270" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/week01/spiders/spiders/spiders/movies2.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week01/spiders/spiders/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/week01/spiders/spiders/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week01/spiders/spiders/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/week01/spiders/spiders/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week01/spiders/spiders/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/week01/spiders/spiders/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week01/spiders/spiders/spiders/movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/week01/spiders/spiders/spiders/movies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week01/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/week01/NOTE.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
