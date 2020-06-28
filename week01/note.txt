@@ -1,0 +1,7 @@
+1. settings里面需要启用
+ITEM_PIPELINES = {
+   'spider.pipelines.SpiderPipeline': 300,
+}
+否则不会调用pipelines的process_item
+
+2. 请求具体电影详细页面只调用了一次，因为具体页面的Url没有全部获取到
