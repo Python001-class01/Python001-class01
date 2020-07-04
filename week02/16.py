@@ -1,3 +1,122 @@
+def scope_test():
+    def do_local():
+        spam = "local spam"
+    def do_nonlocal():
+        nonlocal spam
+        spam = "nonlocal spam"
+    def do_global():
+        global spam
+        spam = "global spam"
+
+    spam = "test spam"
+    do_local()
+    print("After local assignment:", spam)
+    do_nonlocal()
+    print("After nonlocal assignment:", spam)
+    do_global()
+    print("After global assignment:", spam)
+print(dir())
+scope_test()
+print("In global scope:", spam)
+print(dir())
+"""
+class Solution:
+    def ff(self, arr, ll, r, kk):
+        if ll == r: return arr[r]
+        q = self.pp(arr, ll, r)
+        w = q - ll + 1
+
+        if w == kk:
+            return arr[q]
+        elif w > kk:
+            return self.ff(arr, ll, q - 1, kk)
+        elif w < kk:
+            return self.ff(arr, q + 1, r, kk - w)
+
+    def pp(aa, start, end):
+        key = aa[end]
+        s = start
+
+        for i in range(start, end + 1):
+            if aa[i] > key:
+                aa[i], aa[s] = aa[s], aa[i]
+                s += 1
+        aa[s], aa[end] = aa[end], aa[s]
+
+        return s
+
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        return self.ff(nums, 0, len(nums) - 1, k)
+
+
+
+a = [1, 3, 2, 4, 5, 6, 7, 8, 9, 33, 44, 55, 22, 11]
+
+
+def kk(arr, l, r):
+    if l < r:
+        q = pp(arr, l, r)
+        kk(arr, l, q - 1)
+        kk(arr, q + 1, r)
+
+
+kk(a, 0, 13)
+print(333, a)
+
+class Solution:
+    def minSubArrayLen(self, s: int, nums: List[int]) -> int:
+        if not nums:
+            return 0
+
+        n = len(nums)
+        ans = n
+        start, end, total = 0, 0, 0
+        for end in range(n):
+            total += nums[end]
+            while total >= s:
+                ans = min(ans, end - start)
+                total -= nums[start]
+                start += 1
+
+        return 0 if ans == n else ans + 1
+
+
+class Solution:
+    def minSubArrayLen(self, s, nums):
+        if max(nums) >= s:
+            return 1
+        dp = [0]
+
+        k = len(nums)
+        now = 0
+        for i in range(k):
+            now += nums[i]
+            dp.append(now)
+        print(dp)
+        diff = k + 2
+       
+        if now < s: return 0
+        
+
+        slow = fast = 0
+        for slow in range(k + 1):
+            while fast <= k and dp[fast] - dp[slow] < s:
+                fast += 1
+            print(fast)
+        '''
+        '''
+            if fast == k + 1:
+                break
+            else:
+                t = fast - slow
+                if t == 1: return 1
+                if t < diff: diff = t
+            '''
+        return diff
+
+
+cc = Solution()
+cc.minSubArrayLen(7, [2, 3, 1, 2, 4, 3, 8])
 
 dd=input("input the nums in the list:")
 
@@ -8,22 +127,6 @@ ke = list(ai)  #把元组类型转换为列表
 print(ke,"我就是一个列表",type(ke))
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
 class Solution:
     def threeSumClosest(self, nums, target):
         nums.sort()
@@ -83,4 +186,4 @@ class Solution:
                                 jj += 1
                             j = jj
 
-        return t + diff'''
+        return t + diff"""
