@@ -6,7 +6,7 @@ dbInfo = {
     'port' : 3306,
     'user' : 'xxx',
     'password' : 'xxxxx',
-    'db' : 'xxxxx'
+    'db' : ''
 }
 
 

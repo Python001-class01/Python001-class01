@@ -4,9 +4,9 @@ import pymysql
 dbInfo = {
     'host' : 'localhost',
     'port' : 3306,
-    'user' : 'xxx',
-    'password' : 'xxxxx',
-    'db' : 'xxxxx'
+    'user' : '',
+    'password' : '123456',
+    'db' : 'python_learning'
 }
 
 

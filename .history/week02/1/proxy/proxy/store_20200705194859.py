@@ -5,8 +5,8 @@ dbInfo = {
     'host' : 'localhost',
     'port' : 3306,
     'user' : 'xxx',
-    'password' : 'xxxxx',
-    'db' : 'xxxxx'
+    'password' : '',
+    'db' : 'python_learning'
 }
 
 

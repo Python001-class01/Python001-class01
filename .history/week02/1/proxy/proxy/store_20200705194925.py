@@ -8,7 +8,7 @@ dbInfo = {
     'password' : 'xxxxx',
     'db' : 'xxxxx'
 }
-
+k
 
 class ConnDB(object):
     def __init__(self, dbInfo, sqls):
