@@ -1,0 +1,5 @@
+week02/bin
+week02/lib
+week02/include
+*.pyc
+db_config.py

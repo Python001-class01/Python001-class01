@@ -52,14 +52,18 @@ COOKIES_ENABLED = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    'maoyanspider.middlewares.customProxy.RandomProxy':300,
-#    'maoyanspider.middlewares.customUserAgent.RandomUserAgent':543,
-#    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddlesare':None,
-#    #'maoyanspider.middlewares.MaoyanspiderDownloaderMiddleware': 543,
-#    'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware':400
-# }
+DOWNLOADER_MIDDLEWARES = {
+   'maoyanspider.middlewares.RandomHttpProxyMiddleware':400,
+   'maoyanspider.middlewares.MaoyanspiderDownloaderMiddleware':543,
+   'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddlesare':None,
+   #'maoyanspider.middlewares.MaoyanspiderDownloaderMiddleware': 543,
+   'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware':None,
+}
 
+HTTP_PROXY_LIST = [
+   'http://52.179.231.206:80',
+   'http://95.0.194.241:9000'
+]
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
