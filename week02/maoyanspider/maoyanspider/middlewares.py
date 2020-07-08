@@ -11,6 +11,8 @@ from scrapy.exceptions import NotConfigured
 import random
 from urllib.parse import urlparse
 from collections import defaultdict
+from scrapy.utils.httpobj import urlparse_cached
+from urllib.request import proxy_bypass
 
 class MaoyanspiderSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -122,6 +124,9 @@ class RandomHttpProxyMiddleware(HttpProxyMiddleware):
         auth_encoding = crawler.settings.get('HTTPPROXY_AUTH_ENCODING', 'utf-8')
 
         return cls(auth_encoding, http_proxy_list)
+
+    # def process_request(self, request, spider):
+    #     self._set_proxy(request, 'http')
 
     def _set_proxy(self, request, scheme):
         proxy = random.choice(self.proxies[scheme])
