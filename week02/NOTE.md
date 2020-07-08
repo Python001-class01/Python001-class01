@@ -4,6 +4,12 @@
 - Mysql中基本的数据库、表创建，数据增删改查操作
 - 使用pymysql与Mysql交互
 
+### mysql多次连接问题
+
+在`process_item`中调用了`pymysql.connect`导致在每存储一条数据时就连接一次，应改为在打开pipeline时创建一个连接，pipeline关闭时把连接关闭
+
+阅读https://docs.scrapy.org/en/latest/topics/item-pipeline.html文档，编写pipeline类的`open_spider`,`close_spider`方法
+
 ### Scrapy自定义中间件实现代理IP
 - Scrapy框架中中间件的作用
 - settings.py中关于中间件的设置
