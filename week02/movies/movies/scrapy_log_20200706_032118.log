@@ -1,0 +1,41 @@
+2020-07-06 03:21:18 [scrapy.utils.log] INFO: Scrapy 2.2.0 started (bot: movies)
+2020-07-06 03:21:18 [scrapy.utils.log] INFO: Versions: lxml 4.5.1.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.7.7 (default, May  6 2020, 11:45:54) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.9.2, Platform Windows-10-10.0.18362-SP0
+2020-07-06 03:21:18 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2020-07-06 03:21:18 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'movies',
+ 'DOWNLOAD_DELAY': 1,
+ 'DOWNLOAD_TIMEOUT': 3,
+ 'DOWNLOAD_WARNSIZE': 0,
+ 'LOG_FILE': 'scrapy_log_20200706_032118.log',
+ 'NEWSPIDER_MODULE': 'movies.spiders',
+ 'SPIDER_MODULES': ['movies.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X '
+               '10_15_1)AppleWebKit/537.36 (KHTML, like '
+               'Gecko)Chrome/83.0.4103.116 Safari/537.36'}
+2020-07-06 03:21:18 [scrapy.extensions.telnet] INFO: Telnet Password: 2cc5bc55ee7467c3
+2020-07-06 03:21:18 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-07-06 03:21:19 [twisted] CRITICAL: Unhandled error in Deferred:
+2020-07-06 03:21:19 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "d:\programfiles\anaconda\envs\pythonstudy\lib\site-packages\twisted\internet\defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "d:\programfiles\anaconda\envs\pythonstudy\lib\site-packages\scrapy\crawler.py", line 87, in crawl
+    self.engine = self._create_engine()
+  File "d:\programfiles\anaconda\envs\pythonstudy\lib\site-packages\scrapy\crawler.py", line 101, in _create_engine
+    return ExecutionEngine(self, lambda _: self.stop())
+  File "d:\programfiles\anaconda\envs\pythonstudy\lib\site-packages\scrapy\core\engine.py", line 69, in __init__
+    self.downloader = downloader_cls(crawler)
+  File "d:\programfiles\anaconda\envs\pythonstudy\lib\site-packages\scrapy\core\downloader\__init__.py", line 83, in __init__
+    self.middleware = DownloaderMiddlewareManager.from_crawler(crawler)
+  File "d:\programfiles\anaconda\envs\pythonstudy\lib\site-packages\scrapy\middleware.py", line 53, in from_crawler
+    return cls.from_settings(crawler.settings, crawler)
+  File "d:\programfiles\anaconda\envs\pythonstudy\lib\site-packages\scrapy\middleware.py", line 35, in from_settings
+    mw = create_instance(mwcls, settings, crawler)
+  File "d:\programfiles\anaconda\envs\pythonstudy\lib\site-packages\scrapy\utils\misc.py", line 150, in create_instance
+    instance = objcls.from_crawler(crawler, *args, **kwargs)
+  File "E:\PythonStudy\PythonPractice\week02\homework\movies\movies\middlewares.py", line 123, in from_crawler
+    return cls(auth_encoding, http_proxy_list)
+TypeError: __init__() takes from 1 to 2 positional arguments but 3 were given

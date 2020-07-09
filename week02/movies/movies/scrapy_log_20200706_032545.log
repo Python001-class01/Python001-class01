@@ -1,0 +1,69 @@
+2020-07-06 03:25:45 [scrapy.utils.log] INFO: Scrapy 2.2.0 started (bot: movies)
+2020-07-06 03:25:45 [scrapy.utils.log] INFO: Versions: lxml 4.5.1.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 3.7.7 (default, May  6 2020, 11:45:54) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1g  21 Apr 2020), cryptography 2.9.2, Platform Windows-10-10.0.18362-SP0
+2020-07-06 03:25:45 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2020-07-06 03:25:45 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'movies',
+ 'DOWNLOAD_DELAY': 1,
+ 'DOWNLOAD_TIMEOUT': 3,
+ 'DOWNLOAD_WARNSIZE': 0,
+ 'LOG_ENABLED': False,
+ 'LOG_FILE': 'scrapy_log_20200706_032545.log',
+ 'NEWSPIDER_MODULE': 'movies.spiders',
+ 'SPIDER_MODULES': ['movies.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X '
+               '10_15_1)AppleWebKit/537.36 (KHTML, like '
+               'Gecko)Chrome/83.0.4103.116 Safari/537.36'}
+2020-07-06 03:25:45 [scrapy.extensions.telnet] INFO: Telnet Password: 18326a2f16a1344c
+2020-07-06 03:25:45 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-07-06 03:25:46 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'movies.middlewares.RandomHttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'movies.middlewares.MoviesDownloaderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-07-06 03:25:46 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-07-06 03:25:46 [scrapy.middleware] INFO: Enabled item pipelines:
+['movies.pipelines.MoviesPipeline']
+2020-07-06 03:25:46 [scrapy.core.engine] INFO: Spider opened
+2020-07-06 03:25:46 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-07-06 03:25:46 [maoyan] INFO: Spider opened: maoyan
+2020-07-06 03:25:46 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-07-06 03:25:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://verify.meituan.com/v2/web/general_page?action=spiderindefence&requestCode=810095be9dc84641ba313f6415c3bde4&platform=1000&adaptor=auto&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttp%253A%252F%252Fmaoyan.com%252Ffilms%253FshowType%253D3> from <GET https://maoyan.com/films?showType=3>
+2020-07-06 03:25:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://verify.meituan.com/v2/web/general_page?action=spiderindefence&requestCode=810095be9dc84641ba313f6415c3bde4&platform=1000&adaptor=auto&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttp%253A%252F%252Fmaoyan.com%252Ffilms%253FshowType%253D3> (referer: https://maoyan.com/films?showType=3)
+2020-07-06 03:25:48 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-07-06 03:25:48 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 1219,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 28894,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 1,
+ 'elapsed_time_seconds': 1.767716,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 7, 5, 19, 25, 48, 191968),
+ 'log_count/DEBUG': 2,
+ 'log_count/INFO': 11,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2020, 7, 5, 19, 25, 46, 424252)}
+2020-07-06 03:25:48 [scrapy.core.engine] INFO: Spider closed (finished)
