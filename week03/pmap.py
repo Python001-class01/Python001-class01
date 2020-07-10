@@ -75,18 +75,24 @@ def tcp_one(ip_port_tuple):
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.settimeout(2)
-
+    
     # connect to remote host
     try:
-        return_code = s.connect_ex(ip_port_tuple)
+        
+        s.connect(ip_port_tuple)
+        return_code=0
+        #result = '{0} port {1} is open'.format(ip, port)
+        #return_code = s.connect_ex(ip_port_tuple)
     except Exception as e:
         print('Error:', e)
-        
-    if return_code == 0:
-        port_ok=ip_port_tuple[1]
-        success_ports.append(port_ok)
+    if lock.acquire():  
+        if return_code == 0:
+            port_ok=ip_port_tuple[1]
+            success_ports.append(port_ok)
+        lock.release()
+
     
-seed=[]
+
 def ping_func(n, f, ip):
 
     """
@@ -96,7 +102,7 @@ def ping_func(n, f, ip):
 
         #two parts
         if "-" in ip:
-
+            seed=[]
             ip_start, ip_end = ip.split('-')
             ip_start = ip_address(ip_start)
             ip_end = ip_address(ip_end)
@@ -127,7 +133,7 @@ def ping_func(n, f, ip):
         
 
     elif f == 'tcp':
-        seed = [(ip, port) for port in range(0, 1024)]
+        seed = [(ip, port) for port in range(0, 14)]
         with ThreadPoolExecutor(n) as executor:
             executor.map(tcp_one, seed)
         print(f'IP地址{ip}的所有开放端口是：{success_ports}\n')
