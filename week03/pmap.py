@@ -43,18 +43,20 @@ def ping_one(oneip):
     ping单个ip地址，打印出有效的ip地址
     """
     try:
+        res = subprocess.call('ping -n 2 -w 5 %s' % oneip, stdout=subprocess.PIPE)  # linux 系统将 '-n' 替换成 '-c'
         #t=f"ping {oneip}"
-        res = subprocess.run(["ping",oneip, "-t", "2"] , capture_output=True)  # linux 系统将 '-n' 替换成 '-c'
+        # res = subprocess.run(["ping",oneip, "-t", "2"] , capture_output=True)  # linux 系统将 '-n' 替换成 '-c'
         # 打印运行结果
         print(oneip, True if res == 0 else False)
-        
-        if res.returncode  == 0:
-            ip_used.append(oneip)
-            #re = subprocess.run(["ping",oneip, "-t", "2"],capture_output=True)          
+       
+        if res == 0:ip_used.append(oneip)
+            
+         
             
     except Exception as e:
-      
+       
        print(e)
+  
 
 def tcp_one(ip_port_tuple):
 
@@ -108,7 +110,8 @@ def ping_func(n, f, ip):
             #print(seed)
         '''
         else:
-            seed=[ip]
+            seed=[]
+            seed.append(ip)
             #print(seed)
 
         with ThreadPoolExecutor(n) as executor:
@@ -116,7 +119,7 @@ def ping_func(n, f, ip):
         
 
     elif f == 'tcp':
-        seed = [(ip, port) for port in range(0, 14)]
+        seed = [(ip, port) for port in range(0, 1024)]
         with ThreadPoolExecutor(n) as executor:
             executor.map(tcp_one, seed)
         print(f'IP地址{ip}的所有开放端口是：{success_ports}\n')
