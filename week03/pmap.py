@@ -43,28 +43,17 @@ def ping_one(oneip):
     ping单个ip地址，打印出有效的ip地址
     """
     try:
-        res = subprocess.call('ping -n 2 -w 5 %s' % oneip, stdout=subprocess.PIPE)  # linux 系统将 '-n' 替换成 '-c'
+        #t=f"ping {oneip}"
+        res = subprocess.run(["ping",oneip, "-t", "2"] , capture_output=True)  # linux 系统将 '-n' 替换成 '-c'
         # 打印运行结果
-        #print(oneip, True if res == 0 else False)
-        if lock.acquire():
-            if res == 0:
-                ip_used.append(oneip)
-            #else:
-                #ip_not_used.append(ip)
-            lock.release()
-        #print(ip_address)
+        print(oneip, True if res == 0 else False)
         
-        #t=f"ping  {ip_address}"
-        #if os.system(t) == 0:
-
-
-        #res = subprocess.run(["ping", ip_address, "-t", "2"] , capture_output=True)
-        #if res.returncode == 0:
-           # print(ip_address)
-           # ping_ok.append(ip_address)
+        if res.returncode  == 0:
+            ip_used.append(oneip)
+            #re = subprocess.run(["ping",oneip, "-t", "2"],capture_output=True)          
             
     except Exception as e:
-       # print("Something is wrong when you run the command 'ping'" , "0000000000",e)
+      
        print(e)
 
 def tcp_one(ip_port_tuple):
@@ -72,26 +61,20 @@ def tcp_one(ip_port_tuple):
     """
     用socket连接ip地址及端口，参数 ip_port_tuple 为一个元祖
     """
-
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.settimeout(2)
-    
+    if lock.acquire():
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # connect to remote host
-    try:
-        
-        s.connect(ip_port_tuple)
-        return_code=0
-        #result = '{0} port {1} is open'.format(ip, port)
-        #return_code = s.connect_ex(ip_port_tuple)
-    except Exception as e:
-        print('Error:', e)
-    if lock.acquire():  
-        if return_code == 0:
-            port_ok=ip_port_tuple[1]
-            success_ports.append(port_ok)
-        lock.release()
+        try:
+            s.connect(ip_port_tuple)
+            port_ok = ip_port_tuple[1]
+            success_ports.append(port_ok)  
+            
+        except Exception as e:
+            print('Error:', e)
+        finally:
+            s.close()
+            lock.release()
 
-    
 
 def ping_func(n, f, ip):
 
