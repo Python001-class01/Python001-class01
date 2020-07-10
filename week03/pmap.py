@@ -86,7 +86,7 @@ def tcp_one(ip_port_tuple):
         port_ok=ip_port_tuple[1]
         success_ports.append(port_ok)
     
-
+seed=[]
 def ping_func(n, f, ip):
 
     """
@@ -97,7 +97,14 @@ def ping_func(n, f, ip):
         #two parts
         if "-" in ip:
 
-            start_ip, stop_ip = ip.split('-')
+            ip_start, ip_end = ip.split('-')
+            ip_start = ip_address(ip_start)
+            ip_end = ip_address(ip_end)
+            while ip_start <= ip_end:
+                #IP_QUEUE.put(str(ip_start))
+                seed.append(str(ip_start))
+                ip_start += 1
+            '''
             k=start_ip.split(".")
             start_last_num = k[-1]
            
@@ -110,9 +117,10 @@ def ping_func(n, f, ip):
 
             seed = [before + '.' + str(num) for num in range(int(start_last_num), int(stop_last_num)+1)]
             #print(seed)
+        '''
         else:
             seed=[ip]
-            print(seed)
+            #print(seed)
 
         with ThreadPoolExecutor(n) as executor:
             executor.map(ping_one, seed)
