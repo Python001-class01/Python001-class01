@@ -25,7 +25,9 @@ class HostScanner():
         for ip in ip_list:
             pipe = subprocess.Popen("ping -c 3 {}".format(ip), stdout=subprocess.PIPE, shell=True)
             pipe.wait()
-            print(pipe.poll())
+
+            if pipe.poll() == 0:
+                print("ping ip success: {}".format(ip))
 
     def start_tcp(self):
         pass
@@ -58,6 +60,8 @@ def parse_cmd():
 if __name__ == '__main__':
     number, operation, ip, is_write = parse_cmd()
     scanner = HostScanner(number, operation, ip, is_write)
+    if scanner.ip == None:
+        sys.exit()
     if scanner.op == "ping":
         scanner.start_ping()
     elif scanner.op == "tcp":
