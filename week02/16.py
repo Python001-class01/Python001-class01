@@ -1,3 +1,10 @@
+
+a=[1,2,3,4,5,6]
+t=a[:-1][::-1]
+print(t)
+
+
+"""
 def scope_test():
     def do_local():
         spam = "local spam"
@@ -19,7 +26,7 @@ print(dir())
 scope_test()
 print("In global scope:", spam)
 print(dir())
-"""
+
 class Solution:
     def ff(self, arr, ll, r, kk):
         if ll == r: return arr[r]
