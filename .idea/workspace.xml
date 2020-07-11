@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cfe265d-b239-49cb-8cf7-3c20d1af9270" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/week02/shimo_login.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week02/16.py" beforeDir="false" afterPath="$PROJECT_DIR$/week02/16.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/week02/NOTE.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
