@@ -1,10 +1,10 @@
-
+"""
 a=[1,2,3,4,5,6]
 t=a[:-1][::-1]
 print(t)
 
 
-"""
+
 def scope_test():
     def do_local():
         spam = "local spam"
