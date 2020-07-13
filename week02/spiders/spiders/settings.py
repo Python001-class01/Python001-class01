@@ -67,7 +67,24 @@ COOKIES_ENABLED = True
 #DOWNLOADER_MIDDLEWARES = {
 #    'spiders.middlewares.SpidersDownloaderMiddleware': 543,
 #}
+DOWNLOADER_MIDDLEWARES = {
+    'spiders.middlewares.SpidersDownloaderMiddleware': 534,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
+    'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
+    'spiders.middlewares.RandomHttpProxyMiddleware': 400,
+}
 
+HTTP_PROXY_LIST = [
+  'http://69.162.82.154:5836',
+  'http://182.23.107.210:3128',
+  'http://212.129.34.183:5836',
+  'http://167.71.91.204:8080',
+  'http://154.79.246.178:34577',
+  'http://212.129.3.196:5836',
+  'http://177.85.102.132:80',
+  'http://5.101.195.166:18182',
+  'http://45.188.184.70:8080',
+]
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
