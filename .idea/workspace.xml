@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cfe265d-b239-49cb-8cf7-3c20d1af9270" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week02/NOTE.md" beforeDir="false" afterPath="$PROJECT_DIR$/week02/NOTE.md" afterDir="false" />
-    </list>
+    <list default="true" id="8cfe265d-b239-49cb-8cf7-3c20d1af9270" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +34,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.movies">
+  <component name="RunManager" selected="Python.16">
     <configuration name="16" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python001-class01" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,7 +107,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/week02/16.py</url>
-          <line>39</line>
+          <line>46</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
