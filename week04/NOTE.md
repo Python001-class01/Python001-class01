@@ -14,3 +14,9 @@
 第8个 去重，union 没有实现。
 
 希望有时间再想想，参考其他同学的作业，
+
+#学号: G20190343010522
+#姓名: 栾胜宣
+#班级: 1班
+#小组: 3组
+#作业&总结链接: https://github.com/luanjerry/Python001-class01/tree/master/week04
