@@ -9,7 +9,7 @@
 import pymysql
 
 dbInfo = {
-    'host' : 'localhost',
+    'host' : '192.168.31.126',
     'port' : 3306,
     'user' : 'root',
     'password' : 'root123',
