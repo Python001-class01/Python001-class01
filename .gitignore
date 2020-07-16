@@ -2,6 +2,7 @@
 */lib
 */include
 *.pyc
+*/lib64
 db_config.py
 config.py
 test_server.py
