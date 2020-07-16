@@ -1,6 +1,8 @@
-week02/bin
-week02/lib
-week02/include
+*/bin
+*/lib
+*/include
 *.pyc
 db_config.py
 config.py
+test_server.py
+*_test.py
