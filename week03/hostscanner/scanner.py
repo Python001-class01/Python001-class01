@@ -141,7 +141,7 @@ def scanner_manager():
             host_json[r[0]] = port
 
         if scanner.file != None:
-            write_file(scanner.file, tcp_result, 'w')
+            write_file(scanner.file, host_json, 'w')
         else:
             print(host_json)
 
