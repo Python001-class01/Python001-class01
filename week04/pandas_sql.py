@@ -53,7 +53,7 @@ pd.concat([table1, table2]).drop_duplicates()
 
 # DELETE FROM table1 WHERE id=10;
 del_index = table1[table1['id'] == 10].index
-table1.drop(index, axis=0)
+table1.drop(del_index, axis=0)
 
 # ALTER TABLE table1 DROP COLUMN column_name;
 table1.drop(columns=['id'], axis=1)
