@@ -1,0 +1,18 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Comments List</title>
+</head>
+<body>
+    <h1>楚门的世界豆瓣短评</h1>
+    <form role="search" method="get" action="/search/">
+            {% csrf_token %}
+            <input type="search" name="q" placeholder="Search" required>
+            <button type="submit">搜索</span></button>
+    </form>
+{% for comments in n %}
+    <div>短评内容: {{ comments.comment }}   <br>
+           星级: {{ comments.rate }}  
+    </div>
+{% endfor %}
+</body>
