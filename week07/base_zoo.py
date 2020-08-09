@@ -4,7 +4,6 @@ from abc import ABC, abstractmethod
 class Animal(ABC):
     @abstractmethod
     def __init__(self, animal_type, size, character):
-        # TODO:筛选设置规定的字段
         self.animal_type = animal_type
         self.size = size
         self.character = character
