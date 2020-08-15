@@ -47,11 +47,12 @@ class Animals(ABC):
 
 class Cat(Animals):
     call = 'miaomiao'
-    is_suitable_pet=True
+    
 
     def __init__(self, name, type, size, character):
         super().__init__(type, size, character)
         self.name = name
+        self.is_suitable_pet=True
        
 if __name__ == '__main__':
     # 实例化动物园
