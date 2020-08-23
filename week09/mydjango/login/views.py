@@ -21,6 +21,8 @@ def login_page(request):
             if user:
                 # 登陆用户
                 login(request, user)
-                return HttpResponse('登录成功')
+                #return HttpResponse('登录成功')
+                return render(request, 'success.html', locals())
             else:
-                return HttpResponse('登录失败')
+                #return HttpResponse('登录失败')
+                return render(request, 'fail.html', locals())
